@@ -1,5 +1,5 @@
-var People = artifacts.require("./People.sol");
+var People = artifacts.require("./SimpleStorage.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(People);
+  deployer.deploy(SimpleStorage);
 };
