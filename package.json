@@ -56,7 +56,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy": "npm run build&&gh-pages -d build_webpack"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -89,5 +90,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage": "http://jasoons.github.io/uct_vote"
 }
