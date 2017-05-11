@@ -1,0 +1,51 @@
+Geth:
+geth --testnet --fast --rpc --rpcapi db,eth,net,web3,personal --cache=1024  --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain "*" --bootnodes "enode://20c9ad97c081d63397d7b685a412227a40e23c8bdc6688c6f37e97cfbc22d2b4d1db1510d8f61e6a8866ad7f0e17c02b14182d37ea7c3c8b9c2683aeb6b733a1@52.169.14.227:30303,enode://6ce05930c72abc632c58e2e4324f7c7ea478cec0ed4fa2528982cf34483094e9cbc9216e7aa349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303"
+
+
+Javascritpt libraries: uport-connect, truffle, web3
+
+
+truffle compile && truffle migrate --reset
+
+
+truffle:
+Only for the mainnet:
+truffle console
+web3.personal.unlockAccount('0x9dc6fbde6f2460b5034c5ce743584e7f8496fb5d', '123', 15000)
+truffle compile
+truffle migrate (-reset)
+
+Token template:
+https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/MintableToken.sol
+https://github.com/TokenMarketNet/ico/blob/master/contracts/MintableToken.sol
+
+
+
+
+testrpc -s "seed"
+
+Available Accounts
+==================
+(0) 0x3b26935917de7f5fac60f6d15ff02b1cf468dfb0
+(1) 0xc430e396b63d40fee619c8e3828f68cf00756ece
+(2) 0xcf8393b82491510f48cae6e9fb2e7bdf7390f801
+(3) 0x5eea7f35e0ca9b643e0a1b15b8e018a6f219743d
+(4) 0xba972481084ea3851fbdc9b315e31b421b2ee0f4
+(5) 0xfe9bbb8152c357edebc0d63039a586c99d423d68
+(6) 0x8c73f83574be8bf2c619b5f1ec3321757b840165
+(7) 0x03e765bb1a1c3702b9512f67b45034d71c6263b1
+(8) 0x2cf744c20863a2523fe610014cb3ded5a19bb463
+(9) 0x5b79f1452f94872e8bc57536be61947f897e5ca2
+
+Private Keys
+==================
+(0) 4397dbd437030df7c8ed3cb213f34aeea9786debd4bbd62767021eb19ae7d345
+(1) 59025abe73ea743b663276546cfdefe7e6ceab2618d3d851c0053228d21b3e89
+(2) 98545d87cbdb20fb4198b407d45c19a6ae476e7b327ec2511b11df34d9e0e36d
+(3) 97b543ccd0b333450872f010287211f54b7442c261a956181cc5d7599825bc0d
+(4) ae8e040c53e069b017b7582db2e4ea368a07a90806488b1c7d0f0d3bf23b79df
+(5) 39bc36a89c1b732127bca39030874f30222dfad8415f102af6feaf5b60d6a6af
+(6) f927e60ffbb8a1965362ee4a97ccdea87cf9bb3a703620e37cf61f13cfbfdcd7
+(7) 206a85417e715f3b8e99b69c990ecc97db264cc36cb901e8beddb4aeb08d1b9e
+(8) efeb100ca1c3763ccf962d09f4fe863f4c6c80238987f87d57fe9dbd0c012bb4
+(9) dba880a5c0554e06487b38b0105702fe2b2d387dded8066a68b8885869e70ab2
