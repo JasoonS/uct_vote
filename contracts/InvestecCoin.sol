@@ -277,23 +277,35 @@ contract InvestecCoin is MintableToken {
       amounts[i] = nextReq.amount;
     }
     return (messages, addresses, amounts);
+  }
 
+  function sendMoney(bytes32 _message, address _to, uint _amount) returns (bool success) {
+    Transaction memory trasac;
+
+    // have a boolean check here... only add transaction if enough funds...
+    Transfer(msg.sender, _to, _amount);
+
+    trasac.message = _message;
+    trasac.amount = _amount;
+    trasac.from = msg.sender;
+    trasac.to = _to;
+
+    transactionIn[_to].push(trasac);
+    transactionIn[msg.sender].push(trasac);
+    return true;
+  }
+
+  function makeReqPayment() {
+    sendMoney(paymentRequests[msg.sender][paymentReqInd].message,
+      paymentRequests[msg.sender][paymentReqInd].to,
+      paymentRequests[msg.sender][paymentReqInd].amount);
+
+    paymentReqInd = paymentReqInd + 1;
   }
 
  /*bytes32[] memory firstNames = new bytes32[](length);
  bytes32[] memory lastNames = new bytes32[](length);
  uint[] memory ages = new uint[](length);*/
-
- /*
- function sendMoney(bytes32 _message, address _to, uint _amount) returns (bool success) {
-   Transaction memory newPerson;    // have a boolean check here... only add transaction if enough funds...
-   Transfer(msg.sender, _to, _amount);    newPerson.message = _message;
-   newPerson.amount = _amount;
-   newPerson.from = msg.sender;
-   newPerson.to = _to;    transactionIn[_to].push(newPerson);
-   transactionIn[msg.sender].push(newPerson);
-   return true;
- }*/
 
  /*function investInBank(bytes32 _message, address _to, uint _amount)*/
 }

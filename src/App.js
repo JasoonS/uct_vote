@@ -28,38 +28,55 @@ let thirdP = "0xcf8393b82491510f48cae6e9fb2e7bdf7390f801"
   let ic
   iCoin.deployed().then(function(iC) {
     ic = iC
-  //   // mint
+    // 1
   //   return ic.mint(user, 123, {from: bank})
-  // }).then((res) => {
+  // })
+  // .then((res) => {
   //   return ic.balanceOf(user)
-  // }).then((res) => {
-  //   console.log(res)
+  // })
+
+  // 2
   //   return ic.redeemCoins(100, {from: user})
   // })
   // .then((res) => {
   //   return ic.balanceOf(user)
   // }).then((res) => {
   //   console.log(res)
-    // return  window.web3.toAscii(i)
+  // })
 
-
+  // 3
     // ic.requestPayment(user, 20, "payment, yess", {from: thirdP})
+    // })
 
 
+ // 4
+  //   ic.viewPayRequests({from: user}).then(function(result) {
+  //     console.log(
+  //       {
+  //         firstNames: result[0].map(i => window.web3.toAscii(i)),
+  //         lastNames: result[1].map(i => i),
+  //         ages: String(result[2]).split(',') // this is a bit of a hack to get an array of int strings from bigints
+  //       }
+  //     )
+  //   })
+  // })
 
-    ic.viewPayRequests({from: user}).then(function(result) {
-      console.log(
-        {
-          firstNames: result[0].map(i => window.web3.toAscii(i)),
-          lastNames: result[1].map(i => i),
-          ages: String(result[2]).split(',') // this is a bit of a hack to get an array of int strings from bigints
-        }
-      )
-    })
+  // 5
+  // ic.makeReqPayment()
+  // }).then((res) => {
+  //   return ic.balanceOf(user)
+  // }).then((res) => {
+  //   console.log(res)
+  // })
 
 
-})
+  // 6
+    return ic.balanceOf(thirdP)
+  }).then((res) => {
+    console.log(res)
+  })
 
+  // 7 - bank redeems
 
 class App extends Component {
   constructor(props) {
